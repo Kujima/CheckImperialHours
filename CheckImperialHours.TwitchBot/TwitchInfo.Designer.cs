@@ -59,5 +59,23 @@ namespace CheckImperialHours.TwitchBot {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à oauth:sr3x51as3257c7ays9d44ffph1k85o.
+        /// </summary>
+        internal static string BotToken {
+            get {
+                return ResourceManager.GetString("BotToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Shallik.
+        /// </summary>
+        internal static string ChannelName {
+            get {
+                return ResourceManager.GetString("ChannelName", resourceCulture);
+            }
+        }
     }
 }

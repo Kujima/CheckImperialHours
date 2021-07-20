@@ -4,17 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckImperialHours.App
+namespace CheckImperialHours.Lib
 {
     /// <summary>
     /// Class permettant de retourner les informations sur le prochain reset imperial
     /// </summary>
     public static class ResetImperial
     {
+        #region Properties
+
         /// <summary>
         /// Contient les heures des reset sur une journée
         /// </summary>
-        private static List<int> HourReset = new List<int>() { 2, 5, 8, 11, 14, 17, 20, 23 };
+        private static List<int> HourReset = new List<int>() { 2, 5, 8, 11, 14, 15, 17, 20, 23 };
+
+        #endregion
+
+        #region public methods
 
         /// <summary>
         /// Retourne l'heure du prochain reset
@@ -35,7 +41,7 @@ namespace CheckImperialHours.App
             {
                 for (int i = 0; i < HourReset.Count; i++)
                 {
-                    if (HourReset[i]<= hourNow && hourNow < HourReset[i+1])
+                    if (HourReset[i] <= hourNow && hourNow < HourReset[i + 1])
                     {
                         hourNextReset = HourReset[i + 1];
                         break;
@@ -89,6 +95,9 @@ namespace CheckImperialHours.App
 
                 return timeUntilNextWarning;
             }
+
+            #endregion
+
         }
     }
 }

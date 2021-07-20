@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CheckImperialHours.Lib\CheckImperialHours.Lib.csproj" />
     <ProjectReference Include="..\CheckImperialHours.TwitchBot\CheckImperialHours.TwitchBot.csproj" />
   </ItemGroup>
 
