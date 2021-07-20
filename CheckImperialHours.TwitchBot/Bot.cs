@@ -85,6 +85,13 @@ namespace CheckImperialHours.TwitchBot
             Console.WriteLine(DateTime.Now + " - " + text);
         }
 
+        private void GetNextResetImperial()
+        {
+            int hourNextReset = ResetImperial.GetNextHourReset();
+            Client.SendMessage(TwitchInfo.ChannelName, $"!piano Le prochain reset imperial est à {hourNextReset} h !!");
+            DisplayLog($"Commande demandé !resetImperial : Le prochain reset imperial est à { hourNextReset} h!!");
+        }
+
         #endregion
 
         #region Event Methods
@@ -109,9 +116,8 @@ namespace CheckImperialHours.TwitchBot
             switch (inputC.Command.CommandText)  
             {
                 case "resetimperial":
-                    int hourNextReset = ResetImperial.GetNextHourReset();
-                    Client.SendMessage(TwitchInfo.ChannelName, $"!piano Le prochain reset imperial est à {hourNextReset} h !!");
-                    DisplayLog($"Commande demandé !resetImperial : Le prochain reset imperial est à { hourNextReset} h!!");
+
+                    GetNextResetImperial();
                     break;
 
                 default:
